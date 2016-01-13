@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RKG-HC-qqC">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="DQ1-Dz-Pw3">
+            <objects>
+                <navigationController id="RKG-HC-qqC" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NIz-aW-Ol8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="e05-af-jKQ" kind="relationship" relationship="rootViewController" id="Mzy-ZG-zWb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WmO-fZ-FA9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-39" y="441"/>
+        </scene>
+        <!--Things-->
+        <scene sceneID="yeN-a7-Afo">
+            <objects>
+                <viewController id="e05-af-jKQ" customClass="ViewController" customModule="SwiftTransitionExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="duM-JI-za8"/>
+                        <viewControllerLayoutGuide type="bottom" id="Scz-nd-vsJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xSa-Z2-rXq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Things" id="W0r-Sv-ZVk"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <segue destination="lWE-PU-SAp" kind="show" identifier="2Second" id="ssr-oo-KNi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I3H-eL-Kfy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="382" y="441"/>
+        </scene>
+        <!--Second Controller-->
+        <scene sceneID="VY8-tf-e5X">
+            <objects>
+                <viewController id="lWE-PU-SAp" customClass="TTSecondController" customModule="SwiftTransitionExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uuk-Ya-zZL"/>
+                        <viewControllerLayoutGuide type="bottom" id="2xy-i3-pOK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cNx-Fi-PDG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m7G-9q-y6d">
+                                <rect key="frame" x="50" y="84" width="220" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="8sL-fn-t7m"/>
+                                    <constraint firstAttribute="height" constant="220" id="cK4-Tj-RGi"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2v-rt-2Ej">
+                                <rect key="frame" x="50" y="319" width="220" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="PwO-eH-5A5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="X2v-rt-2Ej" firstAttribute="centerX" secondItem="cNx-Fi-PDG" secondAttribute="centerX" id="012-78-27Y"/>
+                            <constraint firstItem="X2v-rt-2Ej" firstAttribute="top" secondItem="m7G-9q-y6d" secondAttribute="bottom" constant="15" id="0yg-lX-82e"/>
+                            <constraint firstItem="m7G-9q-y6d" firstAttribute="centerX" secondItem="cNx-Fi-PDG" secondAttribute="centerX" id="4ll-04-sG2"/>
+                            <constraint firstItem="m7G-9q-y6d" firstAttribute="top" secondItem="uuk-Ya-zZL" secondAttribute="bottom" constant="20" id="OxU-fQ-Hdl"/>
+                            <constraint firstItem="X2v-rt-2Ej" firstAttribute="width" secondItem="m7G-9q-y6d" secondAttribute="width" id="XQz-bi-WjA"/>
+                            <constraint firstItem="m7G-9q-y6d" firstAttribute="centerX" secondItem="cNx-Fi-PDG" secondAttribute="centerX" id="c2O-5u-R03"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="imgView" destination="m7G-9q-y6d" id="eSe-Si-U4U"/>
+                        <outlet property="label" destination="X2v-rt-2Ej" id="VcE-pM-YBD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e20-Oo-sI3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="764" y="441"/>
+        </scene>
+    </scenes>
+</document>

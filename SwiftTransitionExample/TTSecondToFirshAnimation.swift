@@ -28,7 +28,6 @@ class TTSecondToFirshAnimation: NSObject, UIViewControllerAnimatedTransitioning 
         fromVc.imgView.hidden = true
         toVc.view.alpha = 0
         
-        toVc.view.frame = transitionContext.finalFrameForViewController(toVc)
         containerView?.insertSubview(toVc.view, belowSubview: fromVc.view)
         containerView?.addSubview(snapImgView)
         

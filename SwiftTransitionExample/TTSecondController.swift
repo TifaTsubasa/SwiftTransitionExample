@@ -49,7 +49,7 @@ class TTSecondController: UIViewController, UINavigationControllerDelegate {
     }
     
     override func viewWillDisappear(animated: Bool) {
-        super.viewWillAppear(animated)
+        super.viewWillDisappear(animated)
         if let _ = self.navigationController?.delegate {
             self.navigationController?.delegate = nil
         }

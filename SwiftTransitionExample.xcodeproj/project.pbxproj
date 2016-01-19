@@ -94,6 +94,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C5628C81C4DE5F400A7C633 /* ScaleTransition */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ScaleTransition;
+			sourceTree = "<group>";
+		};
+		5C5628C91C4DE60800A7C633 /* MainTransition */ = {
+			isa = PBXGroup;
+			children = (
+				5CD3B1051C463FE20050CDDF /* Animation */,
+				5CD3B1021C462D0F0050CDDF /* Controller */,
+				5CD3B0FF1C4627660050CDDF /* View */,
+				5CD3B0FC1C46243A0050CDDF /* Model */,
+				5CD3B0F11C4624170050CDDF /* Thing images */,
+			);
+			name = MainTransition;
+			sourceTree = "<group>";
+		};
 		5CD3B0B71C4622EC0050CDDF = {
 			isa = PBXGroup;
 			children = (
@@ -117,11 +136,8 @@
 		5CD3B0C21C4622EC0050CDDF /* SwiftTransitionExample */ = {
 			isa = PBXGroup;
 			children = (
-				5CD3B1051C463FE20050CDDF /* Animation */,
-				5CD3B1021C462D0F0050CDDF /* Controller */,
-				5CD3B0FF1C4627660050CDDF /* View */,
-				5CD3B0FC1C46243A0050CDDF /* Model */,
-				5CD3B0F11C4624170050CDDF /* Thing images */,
+				5C5628C91C4DE60800A7C633 /* MainTransition */,
+				5C5628C81C4DE5F400A7C633 /* ScaleTransition */,
 				5CD3B0C31C4622EC0050CDDF /* AppDelegate.swift */,
 				5CD3B0C71C4622EC0050CDDF /* Main.storyboard */,
 				5CD3B0CA1C4622EC0050CDDF /* Assets.xcassets */,

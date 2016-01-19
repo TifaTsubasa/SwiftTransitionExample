@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5C3043201C4651AA0046C2E8 /* TTSecondToFirshAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C30431F1C4651AA0046C2E8 /* TTSecondToFirshAnimation.swift */; };
+		5C5628CD1C4DE68D00A7C633 /* TTPushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5628CC1C4DE68D00A7C633 /* TTPushTransition.swift */; };
+		5C5628CF1C4DE95800A7C633 /* TTScaleNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5628CE1C4DE95800A7C633 /* TTScaleNavigationController.swift */; };
+		5C5628D11C4DEBA400A7C633 /* TTPopTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5628D01C4DEBA400A7C633 /* TTPopTransition.swift */; };
 		5CD3B0C41C4622EC0050CDDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3B0C31C4622EC0050CDDF /* AppDelegate.swift */; };
 		5CD3B0C61C4622EC0050CDDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3B0C51C4622EC0050CDDF /* ViewController.swift */; };
 		5CD3B0C91C4622EC0050CDDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CD3B0C71C4622EC0050CDDF /* Main.storyboard */; };
@@ -45,6 +48,9 @@
 
 /* Begin PBXFileReference section */
 		5C30431F1C4651AA0046C2E8 /* TTSecondToFirshAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTSecondToFirshAnimation.swift; sourceTree = "<group>"; };
+		5C5628CC1C4DE68D00A7C633 /* TTPushTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTPushTransition.swift; sourceTree = "<group>"; };
+		5C5628CE1C4DE95800A7C633 /* TTScaleNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTScaleNavigationController.swift; sourceTree = "<group>"; };
+		5C5628D01C4DEBA400A7C633 /* TTPopTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTPopTransition.swift; sourceTree = "<group>"; };
 		5CD3B0C01C4622EC0050CDDF /* SwiftTransitionExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftTransitionExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CD3B0C31C4622EC0050CDDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CD3B0C51C4622EC0050CDDF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +103,9 @@
 		5C5628C81C4DE5F400A7C633 /* ScaleTransition */ = {
 			isa = PBXGroup;
 			children = (
+				5C5628CC1C4DE68D00A7C633 /* TTPushTransition.swift */,
+				5C5628D01C4DEBA400A7C633 /* TTPopTransition.swift */,
+				5C5628CE1C4DE95800A7C633 /* TTScaleNavigationController.swift */,
 			);
 			name = ScaleTransition;
 			sourceTree = "<group>";
@@ -348,10 +357,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C5628D11C4DEBA400A7C633 /* TTPopTransition.swift in Sources */,
+				5C5628CF1C4DE95800A7C633 /* TTScaleNavigationController.swift in Sources */,
 				5CD3B0FE1C4624AC0050CDDF /* TTThing.swift in Sources */,
 				5C3043201C4651AA0046C2E8 /* TTSecondToFirshAnimation.swift in Sources */,
 				5CD3B1041C462D220050CDDF /* TTSecondController.swift in Sources */,
 				5CD3B0C61C4622EC0050CDDF /* ViewController.swift in Sources */,
+				5C5628CD1C4DE68D00A7C633 /* TTPushTransition.swift in Sources */,
 				5CD3B1011C4627770050CDDF /* TTThingCell.swift in Sources */,
 				5CD3B1071C4640060050CDDF /* TTFirstToSecondAnimation.swift in Sources */,
 				5CD3B0C41C4622EC0050CDDF /* AppDelegate.swift in Sources */,

@@ -49,7 +49,7 @@
         <!--Second Controller-->
         <scene sceneID="VY8-tf-e5X">
             <objects>
-                <viewController id="lWE-PU-SAp" customClass="TTSecondController" customModule="SwiftTransitionExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="lWE-PU-SAp" customClass="TTSecondController" customModule="SwiftTransitionExample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uuk-Ya-zZL"/>
                         <viewControllerLayoutGuide type="bottom" id="2xy-i3-pOK"/>
@@ -117,7 +117,7 @@
         <!--Item-->
         <scene sceneID="N5E-a9-jjX">
             <objects>
-                <navigationController id="8dc-Z7-hTE" sceneMemberID="viewController">
+                <navigationController id="8dc-Z7-hTE" customClass="TTScaleNavigationController" customModule="SwiftTransitionExample" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="w43-KV-GFj"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ovx-h4-EFS">
@@ -143,7 +143,24 @@
                     <view key="view" contentMode="scaleToFill" id="Ing-C1-ghg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JHv-Ot-3sv">
+                                <rect key="frame" x="137" y="269" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="HbI-ye-a5J"/>
+                                    <constraint firstAttribute="height" constant="30" id="QQg-DZ-fb1"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="Q2m-IO-jes" kind="show" id="M9e-k9-sDg"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JHv-Ot-3sv" firstAttribute="centerX" secondItem="Ing-C1-ghg" secondAttribute="centerX" id="FMe-IN-dSn"/>
+                            <constraint firstItem="JHv-Ot-3sv" firstAttribute="centerY" secondItem="Ing-C1-ghg" secondAttribute="centerY" id="bAM-71-wps"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KOI-hF-vRt"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -151,6 +168,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ni1-Sf-znd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="382" y="1097"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="aYF-7z-n34">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="Q2m-IO-jes" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hhl-Wq-fMd"/>
+                        <viewControllerLayoutGuide type="bottom" id="PzQ-Rp-LfD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="b7c-ta-dtc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Exy-1T-8so" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="764" y="1097"/>
         </scene>
     </scenes>
 </document>

@@ -79,6 +79,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let secondVc = TTSecondController()
         selectedIndex = indexPath
         secondVc.thing = things[indexPath.item]
+        secondVc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(secondVc, animated: true)
     }
 

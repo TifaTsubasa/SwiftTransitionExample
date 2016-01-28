@@ -10,7 +10,7 @@ import UIKit
 
 class TTPushTransition: NSObject, UIViewControllerAnimatedTransitioning {
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
-        return 0.3
+        return 3
     }
     
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {

@@ -10,7 +10,7 @@ import UIKit
 
 class TTSecondToFirshAnimation: NSObject, UIViewControllerAnimatedTransitioning {
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
-        return 0.3
+        return 1
     }
     
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {

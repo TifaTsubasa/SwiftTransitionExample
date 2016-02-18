@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TTCustomFromController.swift
 //  SwiftTransitionExample
 //
 //  Created by TifaTsubasa on 16/1/13.
@@ -8,11 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UINavigationControllerDelegate {
+class TTCustomFromController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UINavigationControllerDelegate {
     
     lazy var things: [TTThing] = {
         let arr = [
-            TTThing(title: "Thing 1", image: UIImage(named: "thing01.jpg"), overview: "Drumstick cow beef fatback turkey boudin. Meatball leberkas boudin hamburger pork belly fatback."),
+            TTThing(title
+                : "Thing 1", image: UIImage(named: "thing01.jpg"), overview: "Drumstick cow beef fatback turkey boudin. Meatball leberkas boudin hamburger pork belly fatback."),
             TTThing(title: "Thing 2", image: UIImage(named: "thing02.jpg"), overview: "Shank pastrami sirloin, sausage prosciutto spare ribs kielbasa tri-tip doner."),
             TTThing(title: "Thing 3", image: UIImage(named: "thing03.jpg"), overview: "Frankfurter cow filet mignon short loin ham hock salami meatloaf biltong andouille bresaola prosciutto."),
             TTThing(title: "Thing 4", image: UIImage(named: "thing04.jpg"), overview: "Pastrami sausage turkey shank shankle corned beef."),
@@ -53,13 +54,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let selectedIndexPath = collection.indexPathsForSelectedItems()?.last
-        let secondVc = segue.destinationViewController as! TTSecondController
+        let secondVc = segue.destinationViewController as! TTCustomToController
         secondVc.thing = things[(selectedIndexPath?.item)!]
     }
     // navigation
     func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        if toVC is TTSecondController {
-            return TTFirstToSecondAnimation()
+        if toVC is TTCustomToController {
+            return TTCustomPushAnimation()
         }
         return nil
     }
@@ -76,7 +77,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let secondVc = TTSecondController()
+        let secondVc = TTCustomToController()
         selectedIndex = indexPath
         secondVc.thing = things[indexPath.item]
         secondVc.hidesBottomBarWhenPushed = true

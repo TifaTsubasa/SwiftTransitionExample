@@ -1,5 +1,5 @@
 //
-//  TTFirstToSecondAnimation.swift
+//  TTCustomPushAnimation.swift
 //  SwiftTransitionExample
 //
 //  Created by TifaTsubasa on 16/1/13.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TTFirstToSecondAnimation: NSObject, UIViewControllerAnimatedTransitioning {
+class TTCustomPushAnimation: NSObject, UIViewControllerAnimatedTransitioning {
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
         return 1
     }
@@ -16,8 +16,8 @@ class TTFirstToSecondAnimation: NSObject, UIViewControllerAnimatedTransitioning 
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
         
         let containerView = transitionContext.containerView()
-        let fromVc = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey) as! ViewController
-        let toVc = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey) as! TTSecondController
+        let fromVc = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey) as! TTCustomFromController
+        let toVc = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey) as! TTCustomToController
         let cell = fromVc.collection.cellForItemAtIndexPath((fromVc.collection.indexPathsForSelectedItems()?.first)!) as! TTThingCell
         let snapImageView = cell.imgView.snapshotViewAfterScreenUpdates(false)
         

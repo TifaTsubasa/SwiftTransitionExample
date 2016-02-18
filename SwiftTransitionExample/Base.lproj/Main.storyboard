@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="osq-8w-LTi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="osq-8w-LTi">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--Item-->
@@ -26,7 +26,7 @@
         <!--Things-->
         <scene sceneID="yeN-a7-Afo">
             <objects>
-                <viewController id="e05-af-jKQ" customClass="ViewController" customModule="SwiftTransitionExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="e05-af-jKQ" customClass="TTCustomFromController" customModule="SwiftTransitionExample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="duM-JI-za8"/>
                         <viewControllerLayoutGuide type="bottom" id="Scz-nd-vsJ"/>
@@ -46,10 +46,10 @@
             </objects>
             <point key="canvasLocation" x="382" y="441"/>
         </scene>
-        <!--Second Controller-->
+        <!--Scale To Controller-->
         <scene sceneID="VY8-tf-e5X">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="lWE-PU-SAp" customClass="TTSecondController" customModule="SwiftTransitionExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="lWE-PU-SAp" customClass="TTScaleToController" customModule="SwiftTransitionExample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uuk-Ya-zZL"/>
                         <viewControllerLayoutGuide type="bottom" id="2xy-i3-pOK"/>
@@ -117,7 +117,7 @@
         <!--Item-->
         <scene sceneID="N5E-a9-jjX">
             <objects>
-                <navigationController id="8dc-Z7-hTE" customClass="TTScaleNavigationController" customModule="SwiftTransitionExample" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="8dc-Z7-hTE" customClass="TTScaleNavigationController" customModule="SwiftTransitionExample" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="w43-KV-GFj"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" hidden="YES" opaque="NO" alpha="0.14999999999999999" contentMode="scaleToFill" id="Ovx-h4-EFS">
@@ -145,21 +145,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JHv-Ot-3sv">
-                                <rect key="frame" x="143" y="269" width="34" height="30"/>
+                                <rect key="frame" x="211" y="97" width="71" height="68"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="34" id="HbI-ye-a5J"/>
-                                    <constraint firstAttribute="height" constant="30" id="QQg-DZ-fb1"/>
+                                    <constraint firstAttribute="width" constant="71" id="HbI-ye-a5J"/>
+                                    <constraint firstAttribute="height" constant="68" id="QQg-DZ-fb1"/>
                                 </constraints>
-                                <state key="normal" title="push"/>
                                 <connections>
                                     <segue destination="Q2m-IO-jes" kind="show" id="M9e-k9-sDg"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_0863 (1)" translatesAutoresizingMaskIntoConstraints="NO" id="9Sq-dH-qyL">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="JHv-Ot-3sv" firstAttribute="centerX" secondItem="Ing-C1-ghg" secondAttribute="centerX" id="FMe-IN-dSn"/>
-                            <constraint firstItem="JHv-Ot-3sv" firstAttribute="centerY" secondItem="Ing-C1-ghg" secondAttribute="centerY" id="bAM-71-wps"/>
+                            <constraint firstItem="9Sq-dH-qyL" firstAttribute="leading" secondItem="Ing-C1-ghg" secondAttribute="leading" id="5Qh-OR-Guc"/>
+                            <constraint firstAttribute="bottom" secondItem="9Sq-dH-qyL" secondAttribute="bottom" id="A6H-Oz-alH"/>
+                            <constraint firstItem="JHv-Ot-3sv" firstAttribute="centerX" secondItem="Ing-C1-ghg" secondAttribute="centerX" constant="86.5" id="FMe-IN-dSn"/>
+                            <constraint firstItem="JHv-Ot-3sv" firstAttribute="centerY" secondItem="Ing-C1-ghg" secondAttribute="centerY" constant="-153" id="bAM-71-wps"/>
+                            <constraint firstAttribute="trailing" secondItem="9Sq-dH-qyL" secondAttribute="trailing" id="yDj-Lq-1nj"/>
+                            <constraint firstItem="9Sq-dH-qyL" firstAttribute="top" secondItem="Ing-C1-ghg" secondAttribute="top" id="zAZ-YE-sWd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KOI-hF-vRt"/>
@@ -181,21 +187,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_0862 (1)" translatesAutoresizingMaskIntoConstraints="NO" id="1Hg-9C-Ofd">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CYq-Ng-dQ4">
-                                <rect key="frame" x="125" y="269" width="70" height="30"/>
+                                <rect key="frame" x="0.0" y="0.0" width="68" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="BAW-H6-8AE"/>
-                                    <constraint firstAttribute="height" constant="30" id="CYN-pt-gLy"/>
+                                    <constraint firstAttribute="width" constant="68" id="BAW-H6-8AE"/>
+                                    <constraint firstAttribute="height" constant="50" id="CYN-pt-gLy"/>
                                 </constraints>
-                                <state key="normal" title="pop"/>
                                 <connections>
                                     <action selector="pop:" destination="Q2m-IO-jes" eventType="touchUpInside" id="jLE-dp-cY1"/>
                                 </connections>
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="CYq-Ng-dQ4" firstAttribute="centerX" secondItem="b7c-ta-dtc" secondAttribute="centerX" id="JGH-MA-giC"/>
-                            <constraint firstItem="CYq-Ng-dQ4" firstAttribute="centerY" secondItem="b7c-ta-dtc" secondAttribute="centerY" id="LLa-VC-I88"/>
+                            <constraint firstItem="1Hg-9C-Ofd" firstAttribute="top" secondItem="b7c-ta-dtc" secondAttribute="top" id="Feo-5F-hDB"/>
+                            <constraint firstItem="CYq-Ng-dQ4" firstAttribute="centerX" secondItem="b7c-ta-dtc" secondAttribute="centerX" constant="-126" id="JGH-MA-giC"/>
+                            <constraint firstItem="CYq-Ng-dQ4" firstAttribute="centerY" secondItem="b7c-ta-dtc" secondAttribute="centerY" constant="-259" id="LLa-VC-I88"/>
+                            <constraint firstItem="1Hg-9C-Ofd" firstAttribute="leading" secondItem="b7c-ta-dtc" secondAttribute="leading" id="e4r-DX-XXA"/>
+                            <constraint firstAttribute="bottom" secondItem="1Hg-9C-Ofd" secondAttribute="bottom" id="gh8-Ma-4yF"/>
+                            <constraint firstAttribute="trailing" secondItem="1Hg-9C-Ofd" secondAttribute="trailing" id="keh-P3-5mE"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -205,4 +217,8 @@
             <point key="canvasLocation" x="764" y="1097"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="IMG_0862 (1)" width="1242" height="2208"/>
+        <image name="IMG_0863 (1)" width="1242" height="2208"/>
+    </resources>
 </document>

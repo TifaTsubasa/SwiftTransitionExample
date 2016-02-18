@@ -1,5 +1,5 @@
 //
-//  TTSecondToFirshAnimation.swift
+//  TTCustomPopAnimation.swift
 //  SwiftTransitionExample
 //
 //  Created by TifaTsubasa on 16/1/13.
@@ -8,15 +8,15 @@
 
 import UIKit
 
-class TTSecondToFirshAnimation: NSObject, UIViewControllerAnimatedTransitioning {
+class TTCustomPopAnimation: NSObject, UIViewControllerAnimatedTransitioning {
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
         return 1
     }
     
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
         let containerView = transitionContext.containerView()
-        let fromVc = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey) as! TTSecondController
-        let toVc = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey) as! ViewController
+        let fromVc = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey) as! TTCustomToController
+        let toVc = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey) as! TTCustomFromController
         let selectedCell = toVc.collection.cellForItemAtIndexPath(toVc.selectedIndex!) as! TTThingCell
         let snapImgView = fromVc.imgView.snapshotViewAfterScreenUpdates(false)
         

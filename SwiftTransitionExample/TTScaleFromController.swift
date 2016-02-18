@@ -12,7 +12,6 @@ class TTScaleFromController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.randomColor()
         // Do any additional setup after loading the view.
     }
     
@@ -29,7 +28,6 @@ class TTScaleFromController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         self.tabBarController?.tabBar.hidden = true
-        debugPrint(prepareForSegue)
     }
     /*
     // MARK: - Navigation

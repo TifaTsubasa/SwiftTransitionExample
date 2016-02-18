@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5C3043201C4651AA0046C2E8 /* TTSecondToFirshAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C30431F1C4651AA0046C2E8 /* TTSecondToFirshAnimation.swift */; };
+		5C3043201C4651AA0046C2E8 /* TTCustomPopAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C30431F1C4651AA0046C2E8 /* TTCustomPopAnimation.swift */; };
 		5C5628CD1C4DE68D00A7C633 /* TTPushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5628CC1C4DE68D00A7C633 /* TTPushTransition.swift */; };
 		5C5628CF1C4DE95800A7C633 /* TTScaleNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5628CE1C4DE95800A7C633 /* TTScaleNavigationController.swift */; };
 		5C5628D11C4DEBA400A7C633 /* TTPopTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5628D01C4DEBA400A7C633 /* TTPopTransition.swift */; };
@@ -15,7 +15,7 @@
 		5CD031191C57459F00CB5CB9 /* TTScaleFromController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD031181C57459F00CB5CB9 /* TTScaleFromController.swift */; };
 		5CD0311B1C5745D600CB5CB9 /* TTScaleToController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD0311A1C5745D600CB5CB9 /* TTScaleToController.swift */; };
 		5CD3B0C41C4622EC0050CDDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3B0C31C4622EC0050CDDF /* AppDelegate.swift */; };
-		5CD3B0C61C4622EC0050CDDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3B0C51C4622EC0050CDDF /* ViewController.swift */; };
+		5CD3B0C61C4622EC0050CDDF /* TTCustomFromController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3B0C51C4622EC0050CDDF /* TTCustomFromController.swift */; };
 		5CD3B0C91C4622EC0050CDDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CD3B0C71C4622EC0050CDDF /* Main.storyboard */; };
 		5CD3B0CB1C4622EC0050CDDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CD3B0CA1C4622EC0050CDDF /* Assets.xcassets */; };
 		5CD3B0CE1C4622EC0050CDDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CD3B0CC1C4622EC0050CDDF /* LaunchScreen.storyboard */; };
@@ -28,8 +28,8 @@
 		5CD3B0FB1C4624170050CDDF /* thing05.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5CD3B0F61C4624170050CDDF /* thing05.jpg */; };
 		5CD3B0FE1C4624AC0050CDDF /* TTThing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3B0FD1C4624AC0050CDDF /* TTThing.swift */; };
 		5CD3B1011C4627770050CDDF /* TTThingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3B1001C4627770050CDDF /* TTThingCell.swift */; };
-		5CD3B1041C462D220050CDDF /* TTSecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3B1031C462D220050CDDF /* TTSecondController.swift */; };
-		5CD3B1071C4640060050CDDF /* TTFirstToSecondAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3B1061C4640060050CDDF /* TTFirstToSecondAnimation.swift */; };
+		5CD3B1041C462D220050CDDF /* TTCustomToController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3B1031C462D220050CDDF /* TTCustomToController.swift */; };
+		5CD3B1071C4640060050CDDF /* TTCustomPushAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3B1061C4640060050CDDF /* TTCustomPushAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5C30431F1C4651AA0046C2E8 /* TTSecondToFirshAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTSecondToFirshAnimation.swift; sourceTree = "<group>"; };
+		5C30431F1C4651AA0046C2E8 /* TTCustomPopAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTCustomPopAnimation.swift; sourceTree = "<group>"; };
 		5C5628CC1C4DE68D00A7C633 /* TTPushTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTPushTransition.swift; sourceTree = "<group>"; };
 		5C5628CE1C4DE95800A7C633 /* TTScaleNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTScaleNavigationController.swift; sourceTree = "<group>"; };
 		5C5628D01C4DEBA400A7C633 /* TTPopTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTPopTransition.swift; sourceTree = "<group>"; };
@@ -59,7 +59,7 @@
 		5CD0311A1C5745D600CB5CB9 /* TTScaleToController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTScaleToController.swift; sourceTree = "<group>"; };
 		5CD3B0C01C4622EC0050CDDF /* SwiftTransitionExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftTransitionExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CD3B0C31C4622EC0050CDDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5CD3B0C51C4622EC0050CDDF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5CD3B0C51C4622EC0050CDDF /* TTCustomFromController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTCustomFromController.swift; sourceTree = "<group>"; };
 		5CD3B0C81C4622EC0050CDDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5CD3B0CA1C4622EC0050CDDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5CD3B0CD1C4622EC0050CDDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -77,8 +77,8 @@
 		5CD3B0F61C4624170050CDDF /* thing05.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thing05.jpg; sourceTree = "<group>"; };
 		5CD3B0FD1C4624AC0050CDDF /* TTThing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTThing.swift; sourceTree = "<group>"; };
 		5CD3B1001C4627770050CDDF /* TTThingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTThingCell.swift; sourceTree = "<group>"; };
-		5CD3B1031C462D220050CDDF /* TTSecondController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTSecondController.swift; sourceTree = "<group>"; };
-		5CD3B1061C4640060050CDDF /* TTFirstToSecondAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTFirstToSecondAnimation.swift; sourceTree = "<group>"; };
+		5CD3B1031C462D220050CDDF /* TTCustomToController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTCustomToController.swift; sourceTree = "<group>"; };
+		5CD3B1061C4640060050CDDF /* TTCustomPushAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTCustomPushAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,8 +214,8 @@
 		5CD3B1021C462D0F0050CDDF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5CD3B0C51C4622EC0050CDDF /* ViewController.swift */,
-				5CD3B1031C462D220050CDDF /* TTSecondController.swift */,
+				5CD3B0C51C4622EC0050CDDF /* TTCustomFromController.swift */,
+				5CD3B1031C462D220050CDDF /* TTCustomToController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -223,8 +223,8 @@
 		5CD3B1051C463FE20050CDDF /* Animation */ = {
 			isa = PBXGroup;
 			children = (
-				5CD3B1061C4640060050CDDF /* TTFirstToSecondAnimation.swift */,
-				5C30431F1C4651AA0046C2E8 /* TTSecondToFirshAnimation.swift */,
+				5CD3B1061C4640060050CDDF /* TTCustomPushAnimation.swift */,
+				5C30431F1C4651AA0046C2E8 /* TTCustomPopAnimation.swift */,
 			);
 			name = Animation;
 			sourceTree = "<group>";
@@ -371,13 +371,13 @@
 				5CD031191C57459F00CB5CB9 /* TTScaleFromController.swift in Sources */,
 				5CD3B0FE1C4624AC0050CDDF /* TTThing.swift in Sources */,
 				5CD0311B1C5745D600CB5CB9 /* TTScaleToController.swift in Sources */,
-				5C3043201C4651AA0046C2E8 /* TTSecondToFirshAnimation.swift in Sources */,
-				5CD3B1041C462D220050CDDF /* TTSecondController.swift in Sources */,
-				5CD3B0C61C4622EC0050CDDF /* ViewController.swift in Sources */,
+				5C3043201C4651AA0046C2E8 /* TTCustomPopAnimation.swift in Sources */,
+				5CD3B1041C462D220050CDDF /* TTCustomToController.swift in Sources */,
+				5CD3B0C61C4622EC0050CDDF /* TTCustomFromController.swift in Sources */,
 				5C5628CD1C4DE68D00A7C633 /* TTPushTransition.swift in Sources */,
 				5CD3B1011C4627770050CDDF /* TTThingCell.swift in Sources */,
 				5CD031171C57440800CB5CB9 /* UIColor+Random.swift in Sources */,
-				5CD3B1071C4640060050CDDF /* TTFirstToSecondAnimation.swift in Sources */,
+				5CD3B1071C4640060050CDDF /* TTCustomPushAnimation.swift in Sources */,
 				5CD3B0C41C4622EC0050CDDF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

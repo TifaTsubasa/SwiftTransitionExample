@@ -25,13 +25,14 @@ class TTCustomPushAnimation: NSObject, UIViewControllerAnimatedTransitioning {
         let startFrame = cell.imgView.superview!.convertRect(cell.imgView.frame, toView: containerView)
         let finalFrame = toVc.view.convertRect(toVc.imgView.frame, toView: containerView)
         
+        containerView?.addSubview(toVc.view)
+        containerView?.addSubview(snapImageView)
+        
         snapImageView.frame = startFrame
         cell.imgView.hidden = true
         toVc.view.alpha = 0
         toVc.imgView.hidden = true
         
-        containerView?.addSubview(toVc.view)
-        containerView?.addSubview(snapImageView)
         
         UIView.animateWithDuration(duration, animations: { () -> Void in
             toVc.view.alpha = 1

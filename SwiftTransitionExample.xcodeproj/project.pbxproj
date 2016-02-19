@@ -12,8 +12,8 @@
 		5C5628CF1C4DE95800A7C633 /* TTScaleNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5628CE1C4DE95800A7C633 /* TTScaleNavigationController.swift */; };
 		5C5628D11C4DEBA400A7C633 /* TTPopTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5628D01C4DEBA400A7C633 /* TTPopTransition.swift */; };
 		5CD031171C57440800CB5CB9 /* UIColor+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD031161C57440800CB5CB9 /* UIColor+Random.swift */; };
-		5CD031191C57459F00CB5CB9 /* TTScaleFromController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD031181C57459F00CB5CB9 /* TTScaleFromController.swift */; };
-		5CD0311B1C5745D600CB5CB9 /* TTScaleToController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD0311A1C5745D600CB5CB9 /* TTScaleToController.swift */; };
+		5CD031191C57459F00CB5CB9 /* TTScaleFirstController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD031181C57459F00CB5CB9 /* TTScaleFirstController.swift */; };
+		5CD0311B1C5745D600CB5CB9 /* TTScaleSecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD0311A1C5745D600CB5CB9 /* TTScaleSecondController.swift */; };
 		5CD3B0C41C4622EC0050CDDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3B0C31C4622EC0050CDDF /* AppDelegate.swift */; };
 		5CD3B0C61C4622EC0050CDDF /* TTCustomFromController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3B0C51C4622EC0050CDDF /* TTCustomFromController.swift */; };
 		5CD3B0C91C4622EC0050CDDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CD3B0C71C4622EC0050CDDF /* Main.storyboard */; };
@@ -55,8 +55,8 @@
 		5C5628CE1C4DE95800A7C633 /* TTScaleNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTScaleNavigationController.swift; sourceTree = "<group>"; };
 		5C5628D01C4DEBA400A7C633 /* TTPopTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTPopTransition.swift; sourceTree = "<group>"; };
 		5CD031161C57440800CB5CB9 /* UIColor+Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Random.swift"; sourceTree = "<group>"; };
-		5CD031181C57459F00CB5CB9 /* TTScaleFromController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTScaleFromController.swift; sourceTree = "<group>"; };
-		5CD0311A1C5745D600CB5CB9 /* TTScaleToController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTScaleToController.swift; sourceTree = "<group>"; };
+		5CD031181C57459F00CB5CB9 /* TTScaleFirstController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTScaleFirstController.swift; sourceTree = "<group>"; };
+		5CD0311A1C5745D600CB5CB9 /* TTScaleSecondController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTScaleSecondController.swift; sourceTree = "<group>"; };
 		5CD3B0C01C4622EC0050CDDF /* SwiftTransitionExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftTransitionExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CD3B0C31C4622EC0050CDDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CD3B0C51C4622EC0050CDDF /* TTCustomFromController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTCustomFromController.swift; sourceTree = "<group>"; };
@@ -112,8 +112,8 @@
 				5C5628CC1C4DE68D00A7C633 /* TTPushTransition.swift */,
 				5C5628D01C4DEBA400A7C633 /* TTPopTransition.swift */,
 				5C5628CE1C4DE95800A7C633 /* TTScaleNavigationController.swift */,
-				5CD031181C57459F00CB5CB9 /* TTScaleFromController.swift */,
-				5CD0311A1C5745D600CB5CB9 /* TTScaleToController.swift */,
+				5CD031181C57459F00CB5CB9 /* TTScaleFirstController.swift */,
+				5CD0311A1C5745D600CB5CB9 /* TTScaleSecondController.swift */,
 			);
 			name = ScaleTransition;
 			sourceTree = "<group>";
@@ -368,9 +368,9 @@
 			files = (
 				5C5628D11C4DEBA400A7C633 /* TTPopTransition.swift in Sources */,
 				5C5628CF1C4DE95800A7C633 /* TTScaleNavigationController.swift in Sources */,
-				5CD031191C57459F00CB5CB9 /* TTScaleFromController.swift in Sources */,
+				5CD031191C57459F00CB5CB9 /* TTScaleFirstController.swift in Sources */,
 				5CD3B0FE1C4624AC0050CDDF /* TTThing.swift in Sources */,
-				5CD0311B1C5745D600CB5CB9 /* TTScaleToController.swift in Sources */,
+				5CD0311B1C5745D600CB5CB9 /* TTScaleSecondController.swift in Sources */,
 				5C3043201C4651AA0046C2E8 /* TTCustomPopAnimation.swift in Sources */,
 				5CD3B1041C462D220050CDDF /* TTCustomToController.swift in Sources */,
 				5CD3B0C61C4622EC0050CDDF /* TTCustomFromController.swift in Sources */,

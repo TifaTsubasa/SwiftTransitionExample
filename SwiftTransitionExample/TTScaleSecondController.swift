@@ -1,5 +1,5 @@
 //
-//  TTScaleFromController.swift
+//  TTScaleSecondController.swift
 //  SwiftTransitionExample
 //
 //  Created by TifaTsubasa on 16/1/26.
@@ -8,16 +8,14 @@
 
 import UIKit
 
-class TTScaleFromController: UIViewController {
+class TTScaleSecondController: UIViewController {
 
+    @IBAction func pop(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.hidden = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,10 +23,6 @@ class TTScaleFromController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        self.tabBarController?.tabBar.hidden = true
-    }
     /*
     // MARK: - Navigation
 

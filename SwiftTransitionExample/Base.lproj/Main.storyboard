@@ -132,10 +132,10 @@
             </objects>
             <point key="canvasLocation" x="-39" y="1097"/>
         </scene>
-        <!--Scale From Controller-->
+        <!--Scale First Controller-->
         <scene sceneID="X0m-1z-EhW">
             <objects>
-                <viewController id="ang-cf-WXB" customClass="TTScaleFromController" customModule="SwiftTransitionExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ang-cf-WXB" customClass="TTScaleFirstController" customModule="SwiftTransitionExample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="znE-GB-yG0"/>
                         <viewControllerLayoutGuide type="bottom" id="LTM-VK-X1K"/>
@@ -175,10 +175,10 @@
             </objects>
             <point key="canvasLocation" x="382" y="1097"/>
         </scene>
-        <!--Scale To Controller-->
+        <!--Scale Second Controller-->
         <scene sceneID="aYF-7z-n34">
             <objects>
-                <viewController id="Q2m-IO-jes" customClass="TTScaleToController" customModule="SwiftTransitionExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Q2m-IO-jes" customClass="TTScaleSecondController" customModule="SwiftTransitionExample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hhl-Wq-fMd"/>
                         <viewControllerLayoutGuide type="bottom" id="PzQ-Rp-LfD"/>

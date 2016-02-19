@@ -57,6 +57,7 @@ class TTCustomFromController: UIViewController, UICollectionViewDataSource, UICo
         let secondVc = segue.destinationViewController as! TTCustomToController
         secondVc.thing = things[(selectedIndexPath?.item)!]
     }
+    
     // navigation
     func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         if toVC is TTCustomToController {

@@ -1,5 +1,5 @@
 //
-//  TTCustomFromController.swift
+//  TTCustomSecondController.swift
 //  SwiftTransitionExample
 //
 //  Created by TifaTsubasa on 16/1/13.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TTCustomToController: UIViewController, UINavigationControllerDelegate {
+class TTCustomSecondController: UIViewController, UINavigationControllerDelegate {
     
     var interactivePopTransition: UIPercentDrivenInteractiveTransition?
     
@@ -56,7 +56,7 @@ class TTCustomToController: UIViewController, UINavigationControllerDelegate {
     }
     
     func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        if fromVC.isEqual(self) && toVC is TTCustomFromController {
+        if fromVC.isEqual(self) && toVC is TTCustomFirstController {
             return TTCustomPopAnimation()
         }
         return nil

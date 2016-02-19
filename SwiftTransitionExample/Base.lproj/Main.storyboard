@@ -26,7 +26,7 @@
         <!--Things-->
         <scene sceneID="yeN-a7-Afo">
             <objects>
-                <viewController id="e05-af-jKQ" customClass="TTCustomFromController" customModule="SwiftTransitionExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="e05-af-jKQ" customClass="TTCustomFirstController" customModule="SwiftTransitionExample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="duM-JI-za8"/>
                         <viewControllerLayoutGuide type="bottom" id="Scz-nd-vsJ"/>
@@ -46,10 +46,10 @@
             </objects>
             <point key="canvasLocation" x="382" y="441"/>
         </scene>
-        <!--Scale To Controller-->
+        <!--Custom Second Controller-->
         <scene sceneID="VY8-tf-e5X">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="lWE-PU-SAp" customClass="TTScaleToController" customModule="SwiftTransitionExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="lWE-PU-SAp" customClass="TTCustomSecondController" customModule="SwiftTransitionExample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uuk-Ya-zZL"/>
                         <viewControllerLayoutGuide type="bottom" id="2xy-i3-pOK"/>

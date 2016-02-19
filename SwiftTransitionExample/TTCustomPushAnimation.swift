@@ -16,8 +16,8 @@ class TTCustomPushAnimation: NSObject, UIViewControllerAnimatedTransitioning {
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
         
         let containerView = transitionContext.containerView()
-        let fromVc = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey) as! TTCustomFromController
-        let toVc = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey) as! TTCustomToController
+        let fromVc = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey) as! TTCustomFirstController
+        let toVc = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey) as! TTCustomSecondController
         let cell = fromVc.collection.cellForItemAtIndexPath((fromVc.collection.indexPathsForSelectedItems()?.first)!) as! TTThingCell
         let snapImageView = cell.imgView.snapshotViewAfterScreenUpdates(false)
         

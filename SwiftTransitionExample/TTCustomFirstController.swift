@@ -1,5 +1,5 @@
 //
-//  TTCustomFromController.swift
+//  TTCustomFirstController.swift
 //  SwiftTransitionExample
 //
 //  Created by TifaTsubasa on 16/1/13.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TTCustomFromController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UINavigationControllerDelegate {
+class TTCustomFirstController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UINavigationControllerDelegate {
     
     lazy var things: [TTThing] = {
         let arr = [
@@ -54,13 +54,13 @@ class TTCustomFromController: UIViewController, UICollectionViewDataSource, UICo
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let selectedIndexPath = collection.indexPathsForSelectedItems()?.last
-        let secondVc = segue.destinationViewController as! TTCustomToController
+        let secondVc = segue.destinationViewController as! TTCustomSecondController
         secondVc.thing = things[(selectedIndexPath?.item)!]
     }
     
     // navigation
     func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        if toVC is TTCustomToController {
+        if toVC is TTCustomSecondController {
             return TTCustomPushAnimation()
         }
         return nil
@@ -78,7 +78,7 @@ class TTCustomFromController: UIViewController, UICollectionViewDataSource, UICo
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let secondVc = TTCustomToController()
+        let secondVc = TTCustomSecondController()
         selectedIndex = indexPath
         secondVc.thing = things[indexPath.item]
         secondVc.hidesBottomBarWhenPushed = true

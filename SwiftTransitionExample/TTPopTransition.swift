@@ -9,34 +9,37 @@
 import UIKit
 
 class TTPopTransition: NSObject, UIViewControllerAnimatedTransitioning {
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
-        return 0.3
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+        return 0.3;
     }
     
-    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-        let containerView = transitionContext.containerView()
-        let fromVc = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)
-        let toVc = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        let containerView = transitionContext.containerView
+        let fromVc = transitionContext.viewController(forKey: .from)
+        let toVc = transitionContext.viewController(forKey: .to)
         
-        let duration = self.transitionDuration(transitionContext)
-        let screenW = UIScreen.mainScreen().bounds.width
-        let screenH = UIScreen.mainScreen().bounds.height
-        containerView?.addSubview(toVc!.view)
-        containerView?.sendSubviewToBack(toVc!.view)
+        
+        let duration = self.transitionDuration(using: transitionContext)
+        let screenW = UIScreen.main.bounds.width
+        let screenH = UIScreen.main.bounds.height
+        containerView.addSubview(toVc!.view)
+        containerView.addSubview(toVc!.view)
+        containerView.sendSubviewToBack(toVc!.view)
         
         // cover view
-        let blackView = UIView(frame: CGRectMake(0, 0, screenW, screenH))
-        blackView.backgroundColor = UIColor.blackColor()
+        let blackView = UIView(frame: CGRect(x: 0, y: 0, width: screenW, height: screenH))
+        blackView.backgroundColor = UIColor.black
         blackView.alpha = 0.7
-        containerView?.insertSubview(blackView, belowSubview: fromVc!.view)
+        containerView.insertSubview(blackView, belowSubview: fromVc!.view)
         
-        UIView.animateWithDuration(duration, animations: { () -> Void in
-            fromVc?.view.frame = CGRectMake(screenW, 0, screenW, screenH)
-            toVc?.view.transform = CGAffineTransformMakeScale(1, 1)
+        UIView.animate(withDuration: duration, animations: {
+            fromVc?.view.frame = CGRect(x: screenW, y: 0, width: screenW, height: screenH)
+            
+            toVc?.view.transform = CGAffineTransform(scaleX: 1, y: 1)
             blackView.alpha = 0
-            }) { (_) -> Void in
-                blackView.removeFromSuperview()
-                transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+        }) { (finish) in
+            blackView.removeFromSuperview()
+            transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         }
     }
 }

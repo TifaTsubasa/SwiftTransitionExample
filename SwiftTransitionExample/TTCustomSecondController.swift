@@ -20,42 +20,42 @@ class TTCustomSecondController: UIViewController, UINavigationControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = thing?.title
-        self.view.backgroundColor = UIColor.whiteColor()
+        self.view.backgroundColor = UIColor.white
         
         let imgView = UIImageView()
-        imgView.bounds = CGRectMake(0, 0, 200, 200)
-        imgView.center = CGPointMake(self.view.bounds.width / 2, 200)
+        imgView.bounds = CGRect(x: 0, y: 0, width: 200, height: 200)
+        imgView.center = CGPoint(x: self.view.bounds.width / 2, y: 200)
         self.view.addSubview(imgView)
         self.imgView = imgView
         
         let label = UILabel()
         label.numberOfLines = 0
-        label.textAlignment = .Center
-        label.frame = CGRectMake(imgView.frame.origin.x, CGRectGetMaxY(imgView.frame) + 15, 200, 150)
+        label.textAlignment = .center
+        label.frame = CGRect(x: imgView.frame.origin.x, y: imgView.frame.maxY + 15, width: 200, height: 150)
         self.view.addSubview(label)
         self.label = label
         
         imgView.image = thing?.image
         label.text = thing?.overview
         
-        let popGesture = UIScreenEdgePanGestureRecognizer(target: self, action: "handlePopRecognizer:")
-        popGesture.edges = .Left
-        [self.view .addGestureRecognizer(popGesture)]
+        let popGesture = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(TTCustomSecondController.handlePopRecognizer(recognizer:)))
+        popGesture.edges = .left
+        self.view .addGestureRecognizer(popGesture)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.delegate = self
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if let _ = self.navigationController?.delegate {
             self.navigationController?.delegate = nil
         }
     }
     
-    func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         if fromVC.isEqual(self) && toVC is TTCustomFirstController {
             return TTCustomPopAnimation()
         }
@@ -69,20 +69,20 @@ class TTCustomSecondController: UIViewController, UINavigationControllerDelegate
         return nil
     }
     
-    func handlePopRecognizer(recognizer: UIScreenEdgePanGestureRecognizer) {
-        var progress = recognizer.translationInView(self.view).x / self.view.bounds.width
+    @objc func handlePopRecognizer(recognizer: UIScreenEdgePanGestureRecognizer) {
+        var progress = recognizer.translation(in: self.view).x / self.view.bounds.width
         progress = min(1.0, max(0.0, progress))
         
-        if recognizer.state == .Began {
+        if recognizer.state == .began {
             interactivePopTransition = UIPercentDrivenInteractiveTransition()
-            self.navigationController?.popViewControllerAnimated(true)
-        } else if recognizer.state == .Changed {
-            interactivePopTransition?.updateInteractiveTransition(progress)
-        } else if recognizer.state == .Ended || recognizer.state == .Cancelled {
+            self.navigationController?.popViewController(animated: true)
+        } else if recognizer.state == .changed {
+            interactivePopTransition?.update(progress)
+        } else if recognizer.state == .ended || recognizer.state == .cancelled {
             if progress > 0.5 {
-                interactivePopTransition?.finishInteractiveTransition()
+                interactivePopTransition?.finish()
             } else {
-                interactivePopTransition?.cancelInteractiveTransition()
+                interactivePopTransition?.cancel()
             }
             interactivePopTransition = nil
         }

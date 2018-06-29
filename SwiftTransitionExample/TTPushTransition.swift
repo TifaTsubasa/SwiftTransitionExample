@@ -9,40 +9,41 @@
 import UIKit
 
 class TTPushTransition: NSObject, UIViewControllerAnimatedTransitioning {
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.3
     }
     
-    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-        let containerView = transitionContext.containerView()
-        let fromVc = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)
-        let toVc = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        let containerView = transitionContext.containerView
+        let fromVc = transitionContext.viewController(forKey: .from)
+        let toVc = transitionContext.viewController(forKey: .to)
         
-        let duration = self.transitionDuration(transitionContext)
+        let duration = self.transitionDuration(using: transitionContext)
         
-        containerView?.addSubview((toVc?.view)!)
-        let screenW = UIScreen.mainScreen().bounds.width
-        let screenH = UIScreen.mainScreen().bounds.height
-        toVc?.view.frame = CGRectMake(screenW, 0, screenW, screenH)
+        containerView.addSubview((toVc?.view)!)
+        let screenW = UIScreen.main.bounds.width
+        let screenH = UIScreen.main.bounds.height
+        toVc?.view.frame = CGRect(x: screenW, y: 0, width: screenW, height: screenH)
         
         // shadows
-        toVc?.view.layer.shadowOffset = CGSizeMake(-3, 0);
-        toVc?.view.layer.shadowColor = UIColor.blackColor().colorWithAlphaComponent(0.3).CGColor
+        toVc?.view.layer.shadowOffset = CGSize(width: -3, height: 0);
+        toVc?.view.layer.shadowColor = UIColor.black.withAlphaComponent(0.3).cgColor
         toVc?.view.layer.shadowOpacity = 1
         
         // cover view
-        let blackView = UIView(frame: CGRectMake(0, 0, screenW, screenH))
-        blackView.backgroundColor = UIColor.blackColor()
-        blackView.alpha = 0
-        containerView?.insertSubview(blackView, belowSubview: toVc!.view)
         
-        UIView.animateWithDuration(duration, animations: { () -> Void in
-            fromVc?.view.transform = CGAffineTransformMakeScale(0.95, 0.95)
-            toVc?.view.frame = CGRectMake(0, 0, screenW, screenH)
+        let blackView = UIView(frame: CGRect(x: 0, y: 0, width: screenW, height: screenH))
+        blackView.backgroundColor = UIColor.black
+        blackView.alpha = 0
+        containerView.insertSubview(blackView, belowSubview: toVc!.view)
+        
+        UIView.animate(withDuration: duration, animations: { () -> Void in
+            fromVc?.view.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+            toVc?.view.frame = CGRect(x: 0, y: 0, width: screenW, height: screenH)
             blackView.alpha = 0.7
             }) { (_) -> Void in
                 blackView.removeFromSuperview()
-                transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+                transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         }
     }
 }

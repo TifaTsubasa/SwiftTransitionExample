@@ -9,39 +9,40 @@
 import UIKit
 
 class TTCustomPushAnimation: NSObject, UIViewControllerAnimatedTransitioning {
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
-        return 1
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+        return 0.3
     }
     
-    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         
-        let containerView = transitionContext.containerView()
-        let fromVc = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey) as! TTCustomFirstController
-        let toVc = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey) as! TTCustomSecondController
-        let cell = fromVc.collection.cellForItemAtIndexPath((fromVc.collection.indexPathsForSelectedItems()?.first)!) as! TTThingCell
-        let snapImageView = cell.imgView.snapshotViewAfterScreenUpdates(false)
+        let containerView = transitionContext.containerView
+        let fromVc = transitionContext.viewController(forKey: .from) as! TTCustomFirstController
+        let toVc = transitionContext.viewController(forKey: .to) as! TTCustomSecondController
         
-        let duration = self.transitionDuration(transitionContext)
-        let startFrame = cell.imgView.superview!.convertRect(cell.imgView.frame, toView: containerView)
-        let finalFrame = toVc.view.convertRect(toVc.imgView.frame, toView: containerView)
+        let cell = fromVc.collection.cellForItem(at: (fromVc.collection!.indexPathsForSelectedItems?.first!)!) as! TTThingCell
+        let snapImageView = cell.imgView.snapshotView(afterScreenUpdates: false)
         
-        containerView?.addSubview(toVc.view)
-        containerView?.addSubview(snapImageView)
+        let duration = self.transitionDuration(using: transitionContext)
+        let startFrame = cell.imgView.superview!.convert(cell.imgView.frame, to: containerView)
+        let finalFrame = toVc.view.convert(toVc.imgView.frame, to: containerView)
         
-        snapImageView.frame = startFrame
-        cell.imgView.hidden = true
+        containerView.addSubview(toVc.view)
+        containerView.addSubview(snapImageView!)
+        
+        snapImageView?.frame = startFrame
+        cell.imgView.isHidden = true
         toVc.view.alpha = 0
-        toVc.imgView.hidden = true
+        toVc.imgView.isHidden = true
         
         
-        UIView.animateWithDuration(duration, animations: { () -> Void in
+        UIView.animate(withDuration: duration, animations: { () -> Void in
             toVc.view.alpha = 1
-            snapImageView.frame = finalFrame
+            snapImageView?.frame = finalFrame
             }) { (finished) -> Void in
-                toVc.imgView.hidden = false
-                cell.hidden = false
-                snapImageView.removeFromSuperview()
-                transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+                toVc.imgView.isHidden = false
+                cell.isHidden = false
+                snapImageView?.removeFromSuperview()
+                transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         }
     }
 }

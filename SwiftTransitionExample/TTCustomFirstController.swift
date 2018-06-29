@@ -29,37 +29,36 @@ class TTCustomFirstController: UIViewController, UICollectionViewDataSource, UIC
     override func viewDidLoad() {
         super.viewDidLoad()
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSizeMake(155, 183)
+        layout.itemSize = CGSize(width: 155, height: 183)
         
         collection = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
-        collection.backgroundColor = UIColor.whiteColor()
+        collection.backgroundColor = UIColor.white
         collection.dataSource = self
         collection.delegate = self
-        collection.registerClass(TTThingCell.self, forCellWithReuseIdentifier: "TTThingCell")
+        collection.register(TTThingCell.self, forCellWithReuseIdentifier: "TTThingCell")
         self.view.addSubview(collection)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.delegate = self
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if let _ = self.navigationController?.delegate {
             self.navigationController?.delegate = nil
         }
     }
     
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let selectedIndexPath = collection.indexPathsForSelectedItems()?.last
-        let secondVc = segue.destinationViewController as! TTCustomSecondController
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let selectedIndexPath = collection.indexPathsForSelectedItems?.last
+        let secondVc = segue.destination as! TTCustomSecondController
         secondVc.thing = things[(selectedIndexPath?.item)!]
     }
     
     // navigation
-    func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         if toVC is TTCustomSecondController {
             return TTCustomPushAnimation()
         }
@@ -67,19 +66,19 @@ class TTCustomFirstController: UIViewController, UICollectionViewDataSource, UIC
     }
     
     // collection
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return things.count
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collection.dequeueReusableCellWithReuseIdentifier("TTThingCell", forIndexPath: indexPath) as! TTThingCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collection.dequeueReusableCell(withReuseIdentifier: "TTThingCell", for: indexPath as IndexPath) as! TTThingCell
         cell.thing = things[indexPath.item]
         return cell
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let secondVc = TTCustomSecondController()
-        selectedIndex = indexPath
+        selectedIndex = indexPath as NSIndexPath
         secondVc.thing = things[indexPath.item]
         secondVc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(secondVc, animated: true)

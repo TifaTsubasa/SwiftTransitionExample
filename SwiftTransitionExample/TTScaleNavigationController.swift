@@ -16,8 +16,8 @@ class TTScaleNavigationController: UINavigationController, UINavigationControlle
         super.viewDidLoad()
         self.delegate = self
         // Do any additional setup after loading the view.
-        let popRecognizer = UIScreenEdgePanGestureRecognizer(target: self, action: "handlePopRecognizer:")
-        popRecognizer.edges = .Left;
+        let popRecognizer = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(handlePopRecognizer(recognizer:)))
+        popRecognizer.edges = .left;
         self.view.addGestureRecognizer(popRecognizer)
     }
 
@@ -26,10 +26,10 @@ class TTScaleNavigationController: UINavigationController, UINavigationControlle
         // Dispose of any resources that can be recreated.
     }
     
-    func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        if (operation == .Push) {
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        if (operation == .push) {
             return TTPushTransition()
-        } else if operation == .Pop {
+        } else if operation == .pop {
             return TTPopTransition()
         } else {
             return nil
@@ -40,20 +40,20 @@ class TTScaleNavigationController: UINavigationController, UINavigationControlle
         return interactivePopTransition
     }
     
-    func handlePopRecognizer(recognizer: UIScreenEdgePanGestureRecognizer) {
-        var progress = recognizer.translationInView(self.view).x / self.view.bounds.width
+    @objc func handlePopRecognizer(recognizer: UIScreenEdgePanGestureRecognizer) {
+        var progress = recognizer.translation(in: self.view).x / self.view.bounds.width
         progress = min(1.0, max(0.0, progress))
         
-        if recognizer.state == .Began {
+        if recognizer.state == .began {
             interactivePopTransition = UIPercentDrivenInteractiveTransition()
-            self.popViewControllerAnimated(true)
-        } else if recognizer.state == .Changed {
-            interactivePopTransition?.updateInteractiveTransition(progress)
-        } else if recognizer.state == .Ended || recognizer.state == .Cancelled {
+            self.popViewController(animated: true)
+        } else if recognizer.state == .changed {
+            interactivePopTransition?.update(progress)
+        } else if recognizer.state == .ended || recognizer.state == .cancelled {
             if progress > 0.5 {
-                interactivePopTransition?.finishInteractiveTransition()
+                interactivePopTransition?.finish()
             } else {
-                interactivePopTransition?.cancelInteractiveTransition()
+                interactivePopTransition?.cancel()
             }
             interactivePopTransition = nil
         }

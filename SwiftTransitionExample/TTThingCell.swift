@@ -24,8 +24,8 @@ class TTThingCell: UICollectionViewCell {
         let imgView = UIImageView()
         self.imgView = imgView
         titleLabel = UILabel()
-        titleLabel.textAlignment = .Center
-        titleLabel.font = UIFont.boldSystemFontOfSize(13)
+        titleLabel.textAlignment = .center
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 13)
         super.init(frame: frame)
         self.contentView.addSubview(imgView)
         self.contentView.addSubview(titleLabel)
@@ -36,8 +36,10 @@ class TTThingCell: UICollectionViewCell {
     }
     
     override func layoutSubviews() {
-        imgView.frame = CGRectMake(0, 0, self.bounds.width, self.bounds.width)
-        titleLabel.frame = CGRectMake(0, CGRectGetMaxY(imgView.frame), self.bounds.width, self.bounds.height - self.bounds.width)
+        
+        imgView.frame = CGRect(x: 0, y: 0, width: self.bounds.width, height: self.bounds.width)
+        
+        titleLabel.frame = CGRect(x: 0, y: imgView.frame.maxY, width: self.bounds.width, height: self.bounds.height - self.bounds.width)
         super.layoutSubviews()
     }
 }

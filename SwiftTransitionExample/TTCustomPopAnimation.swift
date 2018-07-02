@@ -21,8 +21,7 @@ class TTCustomPopAnimation: NSObject, UIViewControllerAnimatedTransitioning {
         let toVc = transitionContext.viewController(forKey: .to) as! TTCustomFirstController
         
         let selectedCell = toVc.collection.cellForItem(at: toVc.selectedIndex! as IndexPath) as! TTThingCell
-        let snapImgView = fromVc.imgView.snapshotView(afterScreenUpdates: true)
-        
+        let snapImgView = fromVc.imgView.snapshotView(afterScreenUpdates: false)
         
         let duration = transitionDuration(using: transitionContext)
         let startFrame = fromVc.view.convert(fromVc.imgView.frame, to: containerView)

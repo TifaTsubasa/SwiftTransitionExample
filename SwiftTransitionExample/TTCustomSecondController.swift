@@ -62,7 +62,7 @@ class TTCustomSecondController: UIViewController, UINavigationControllerDelegate
         return nil
     }
     
-    func navigationController(navigationController: UINavigationController, interactionControllerForAnimationController animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+    func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
         if animationController is TTCustomPopAnimation {
             return interactivePopTransition
         }

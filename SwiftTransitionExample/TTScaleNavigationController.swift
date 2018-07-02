@@ -36,26 +36,30 @@ class TTScaleNavigationController: UINavigationController, UINavigationControlle
         }
     }
     
-    func navigationController(navigationController: UINavigationController, interactionControllerForAnimationController animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+    func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
         return interactivePopTransition
     }
     
     @objc func handlePopRecognizer(recognizer: UIScreenEdgePanGestureRecognizer) {
         var progress = recognizer.translation(in: self.view).x / self.view.bounds.width
         progress = min(1.0, max(0.0, progress))
-        
-        if recognizer.state == .began {
+        let state: UIGestureRecognizer.State = recognizer.state
+        debugPrint(progress, state)
+
+        switch recognizer.state {
+        case .began:
             interactivePopTransition = UIPercentDrivenInteractiveTransition()
             self.popViewController(animated: true)
-        } else if recognizer.state == .changed {
+        case .changed:
             interactivePopTransition?.update(progress)
-        } else if recognizer.state == .ended || recognizer.state == .cancelled {
+        case .ended, .cancelled, .failed:
             if progress > 0.5 {
                 interactivePopTransition?.finish()
             } else {
                 interactivePopTransition?.cancel()
             }
             interactivePopTransition = nil
+        default: break
         }
     }
     

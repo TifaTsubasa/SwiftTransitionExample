@@ -9,6 +9,7 @@
 import UIKit
 
 class TTPopTransition: NSObject, UIViewControllerAnimatedTransitioning {
+    
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.3;
     }
